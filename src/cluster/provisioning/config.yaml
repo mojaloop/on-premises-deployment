@@ -1,0 +1,20 @@
+#cloud-config
+# This is the config file for Kairos k3s nodes
+
+install:
+  auto: true
+  device: “auto”
+  reboot: true
+
+users:
+  - name: “kairos”
+    passwd: “kairos”
+    ssh_authorized_keys:
+      - “{{ PASTE SSH PUBLIC KEY HERE }}”
+
+k3s:
+  enabled: true
+  args:
+    - ——cluster-init
+  env:
+    K3S_TOKEN: “”
