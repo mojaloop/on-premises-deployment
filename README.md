@@ -8,7 +8,7 @@ The Mojaloop Foundation recommends:
 
 
 ## Cluster Provisioning
-Documentation covering cluster provisioning can be found [here](docs/Cluster%20Provisioning.md).
+Documentation covering cluster provisioning can be found [here](docs/Cluster%20Provisining.md).
 
 ## Software Deployment
 Documentation covering Mojaloop software deployment can be found [here](docs/Software%20Deployment%20Recommendations.md).
