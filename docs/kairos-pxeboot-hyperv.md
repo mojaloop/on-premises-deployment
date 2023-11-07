@@ -45,12 +45,12 @@ The following procedure can be followed to create a Kairos based Kubernetes (k3s
         5. Run: `apt-cache policy docker-ce`
         6. Run: `sudo apt install docker-ce`
         7. Run: `sudo systemctl status docker`
-    6. Make a **control plane node **cloud config file:
+    6. Make a **control plane node** cloud config file:
         1. Generate an SSH keypair:
-           4. Run: `ssh-keygen`
-           5. Accept the defaults by pressing the “enter” key (do not enter a passphrase)
+           1. Run: `ssh-keygen`
+           2. Accept the defaults by pressing the “enter” key (do not enter a passphrase)
         2. Copy the contents of the newly generated SSH public key to the clipboard:
-           6. The file should be found at: `~/.ssh.id_rsa.pub`
+           1. The file should be found at: `~/.ssh.id_rsa.pub`
         3. Create a text file (e.g. with vi) called `config.yaml` with the following content. (_Paste the contents of the SSH public key file in the specified place below_):
 
            ```
