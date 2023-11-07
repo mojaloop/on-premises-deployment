@@ -51,7 +51,7 @@ The following procedure can be followed to create a Kairos based Kubernetes (k3s
            2. Accept the defaults by pressing the “enter” key (do not enter a passphrase)
         2. Copy the contents of the newly generated SSH public key to the clipboard:
            1. The file should be found at: `~/.ssh.id_rsa.pub`
-        3. Create a text file (e.g. with vi) called `config.yaml` with the following content. (_Paste the contents of the SSH public key file in the specified place below_):
+        3. Create a text file (e.g. with vi) called `config.yaml` with the following content, and note its path. (_Paste the contents of the SSH public key file in the specified place below_):
 
            ```
            #cloud-config
@@ -76,8 +76,8 @@ The following procedure can be followed to create a Kairos based Kubernetes (k3s
                K3S_TOKEN: ""
            ```
 
-    7. Run the Kairos AuroraBoot server as a docker container:
-        1. Run: `sudo docker run -v /home/bushj/config.yaml:/config.yaml --rm -ti --net host quay.io/kairos/auroraboot:v0.2.4 --set container_image=quay.io/kairos/kairos-alpine-ubuntu:v2.0.3-k3sv1.21.14-k3s1 --cloud-config=/config.yaml`
+    7. Run the Kairos AuroraBoot server as a docker container (_Paste the path to your config.yaml file in the specified place below_)
+        1. Run: `sudo docker run -v {{ INSERT FULL PATH TO config.yaml FILE HERE }}config.yaml:/config.yaml --rm -ti --net host quay.io/kairos/auroraboot:v0.2.4 --set container_image=quay.io/kairos/kairos-alpine-ubuntu:v2.0.3-k3sv1.21.14-k3s1 --cloud-config=/config.yaml`
     8. Wait for the required images to download and the kairos ISO to be built and served by AuroraBoot:
         1. When you see the following output on the console you will know that AuroraBoot is ready to serve PXE boot requests:
 
@@ -95,3 +95,8 @@ The following procedure can be followed to create a Kairos based Kubernetes (k3s
        1. It should successfully download boot artefacts via PXE boot, install the Kairos operating system and reboot from its HDD to a stable k3s enabled kairos node.
 
             		
+## TODOs
+- Add templating to the config.yaml cloud config file:
+  - Allow for specified number of control plane nodes with different passwords etc...
+  - Allow for specified number of worker nodes with different passwords etc...
+- Add instructions for adding worker nodes to the cluster
