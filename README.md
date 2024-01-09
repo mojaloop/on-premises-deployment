@@ -1,3 +1,8 @@
+**EXPERIMENTAL**
+Please note that this repository currently contains documents and artifacts which are "work in progress" and as such should be used with caution under the guidance of the Mojaloop Foundation.
+At such time as the content of this repository has been sufficiently tested this notice will be removed.
+
+
 This repository contains code, documentation and other artefacts that support the deployment of Mojaloop software in production quality on-premises scenarios.
 
 ## On-Premises Deployment Recommendations
