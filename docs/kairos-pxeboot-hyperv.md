@@ -1,3 +1,6 @@
+*** EXPERIMENTAL ***
+Note: Please be aware that this document is in draft form and the details contained are subject to change and may not be accurate until published.
+
 # Installing Kairos via PXE Boot on Microsoft Hyper-V
 
 The following procedure can be followed to create a Kairos based Kubernetes (k3s) cluster with high-availability control plane, suitable to form the basis of a Mojaloop hosting environment.
