@@ -503,8 +503,7 @@
        ![NetMaker Ingress GW](images/NetMaker-creating-IngressGw.png "NetMaker Creating Ingress GW")
        The node after the Ingress Gateway is successfully created looks like follows:
        ![NetMaker Ingress GW Created](images/NetMaker-IGW-created.png "NetMaker Ingress GW Created")
-
-       e. Adding new External Client clicking in Add External Client after to select Ext. Clients in the side menu. Also known as WireGuard VPN clients/profiles
+       3. Adding new External Client clicking in Add External Client after to select Ext. Clients in the side menu. Also known as WireGuard VPN clients/profiles
        ![NetMaker Ext. Client Menu](images/NetMaker-ExtClient-Menu.png "NetMaker Ext. Client Menu")
        Once the new external client is created you can rename and then get the vpn profile
        ![NetMaker Ext. Client](images/NetMaker-newClient-created.png "NetMaker Ext. Client")
