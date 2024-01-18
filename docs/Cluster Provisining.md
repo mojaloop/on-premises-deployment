@@ -14,7 +14,8 @@
 
     d. Configuring AWS Resources
     1. Creating the hosted zones under selected domain.
-    For the purpose of this document let use the following sample names:
+    
+        For the purpose of this document let use the following sample names:
         
         `devbaremetal.domainName`
 
@@ -73,7 +74,7 @@
         Replace `<userName>` with the actual username you are using
         5. Disable unattended upgrades running the following command: \
         `dpkg-reconfigure unattended-upgrades`
-        
+
         c. Configuring the HAproxy
         1. Install haproxy running the following command:
         `sudo apt install haproxy`
@@ -146,9 +147,9 @@
 
     9. Initialize the env running the following command:
 
-       `./init.sh`
+        `./init.sh`
 
-       The the expected result must look as follow:
+        The the expected result must look as follow:
 
             Cloning into 'iac-modules'...
             remote: Enumerating objects: 5944, done.
@@ -192,7 +193,7 @@
 
         In the file `environment.yaml` please input the corresponding values to
 
-            a. a. cloud_region
+            a. cloud_region
             b. domain must be the domain you are going to use in the on-prem env
             c. letsencrypt_email must the the registran email
             d. ansible_collection_tag current estable version v0.16.11
@@ -248,17 +249,17 @@
 
     2. Set enviromenta variables
 
-       Run the following command:
+        Run the following command:
 
-       `source ./setlocalenv.sh`
+        `source ./setlocalenv.sh`
 
     3. Performing the Control Center Provioning
 
-       Command:
+        Command:
 
-       `./runall.sh`
+        `./runall.sh`
 
-       Expected result is as the following:
+        Expected result is as the following:
 
             INFO[0000] The stack at /iac-run-dir/iac-modules/terraform/control-center/init will be processed in the following order for command init:
             Group 1
@@ -390,11 +391,11 @@
             vault_root_token = <sensitive>
     4. If no error in the previous step, we are good to move the local Terraform State to brand new GitLab instance provisioned
 
-       Command:
+        Command:
 
-       `./movestatetogitlab.sh`
+        `./movestatetogitlab.sh`
 
-       Output:
+        Output:
 
             root@33b2107bdf35:/iac-run-dir/iac-modules/terraform/control-center/init# ./movestatetogitlab.sh
             INFO[0000] The stack at /iac-run-dir/iac-modules/terraform/control-center/init will be processed in the following order for command init:
@@ -448,9 +449,9 @@
         Please do not forget to stoere in secure place your recovery code.
 
         c. Create your personal admin account
-
         1. Go to Admin -> Users menu
         ![GitLab Admin User Menu](images/gitlab-admin-users-menu.png "GitLab Admin Users")
+        
         2. Input the user information in the form
         ![GitLab User Form](images/gitlab-user-info.png "GitLab User Form")
 
@@ -463,9 +464,10 @@
                 tenant-viewers
                 iac
                 tenant-admins
+
     6. Configuring NetMaker
 
-       a. Obtaining the NetMaker url:
+        a. Obtaining the NetMaker url:
 
         Command:
 
@@ -479,7 +481,7 @@
 
             dashboard.netmaker.ctrlcenter.moja-onprem.net
 
-       b. Getting the NetMaker `nmaker-admin` password:
+        b. Getting the NetMaker `nmaker-admin` password:
 
         Command:
 
@@ -489,31 +491,32 @@
             
            TjO2WpwK89eKRJxxxxxxT4ztfAGHGx
 
-       c. Login from your browser, the login pages must look like following
-       ![NetMaker Login Page](images/NetMaker-login-page.png "NetMaker Login Page")
+        c. Login from your browser, the login pages must look like following
+        ![NetMaker Login Page](images/NetMaker-login-page.png "NetMaker Login Page")
 
-          Landing page must look like following after login
-          ![NetMaker Landing Page](images/NetMaker-landing-page.png "NetMaker Landing Page")
+        Landing page must look like following after login
+        ![NetMaker Landing Page](images/NetMaker-landing-page.png "NetMaker Landing Page")
 
-       d. Configure the Node
+        d. Configure the Node
 
-       1. Move to the Nodes Menu, you will see the first preconfigured node named in this case `cntrlctr`
-       ![NetMaker Node Menu](images/NetMaker-node-menu.png "NetMaker Node Menu")
-       2. Next step is to creating the Ingress Gateway in the node, clicking in the Ingress Gateway empty icon and Accept
-       ![NetMaker Ingress GW](images/NetMaker-creating-IngressGw.png "NetMaker Creating Ingress GW")
-       The node after the Ingress Gateway is successfully created looks like follows:
-       ![NetMaker Ingress GW Created](images/NetMaker-IGW-created.png "NetMaker Ingress GW Created")
-       3. Adding new External Client clicking in Add External Client after to select Ext. Clients in the side menu. Also known as WireGuard VPN clients/profiles
-       ![NetMaker Ext. Client Menu](images/NetMaker-ExtClient-Menu.png "NetMaker Ext. Client Menu")
-       Once the new external client is created you can rename and then get the vpn profile
-       ![NetMaker Ext. Client](images/NetMaker-newClient-created.png "NetMaker Ext. Client")
+        1. Move to the Nodes Menu, you will see the first preconfigured node named in this case `cntrlctr`
+        ![NetMaker Node Menu](images/NetMaker-node-menu.png "NetMaker Node Menu")
+        2. Next step is to creating the Ingress Gateway in the node, clicking in the Ingress Gateway empty icon and Accept
+        ![NetMaker Ingress GW](images/NetMaker-creating-IngressGw.png "NetMaker Creating Ingress GW")
+        The node after the Ingress Gateway is successfully created looks like follows:
+        ![NetMaker Ingress GW Created](images/NetMaker-IGW-created.png "NetMaker Ingress GW Created")
+        3. Adding new External Client clicking in Add External Client after to select Ext. Clients in the side menu. Also known as WireGuard VPN clients/profiles
+        ![NetMaker Ext. Client Menu](images/NetMaker-ExtClient-Menu.png "NetMaker Ext. Client Menu")
+        Once the new external client is created you can rename and then get the vpn profile
+        ![NetMaker Ext. Client](images/NetMaker-newClient-created.png "NetMaker Ext. Client")
    
-   7. Generating the Environment GitLab Repo
-      > [!WARNING] Please note if you run the job deploy-env-templates ALL the existing repos will be reset to the initial values, therefore you will need to update the files using the gitlab history
+    7. Generating the Environment GitLab Repo
 
-      a. In gitlab bootstrap repo file name `enviroment.yaml` be sure to input the corresponding values in the directive `- envs`
+        > [!WARNING] Please note if you run the job deploy-env-templates ALL the existing repos will be reset to the initial values, therefore you will need to update the files using the gitlab history
+      
+        a. In gitlab bootstrap repo file name `enviroment.yaml` be sure to input the corresponding values in the directive `- envs`
 
-      That section must look like:
+        That section must look like:
 
             envs:
             - env: dev1
