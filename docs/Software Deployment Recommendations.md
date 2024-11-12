@@ -340,6 +340,8 @@ Members should be deployed to nodes that are expected to fail independently i.e.
 
 Note that additional members may be added to the ensemble to increase redundancy. Any additional members should be deployed to additional different physical nodes in order to maintain resilience against physical hardware failures.
 
+Please see the document [Confluent On-Premises Kafka Recommendations](./Confluent%20On-Premises%20Kafka%20Recommendations%20v0.3.pdf) for more detailed configuration recommendations.
+
 _Note: The Mojaloop Foundation recommends that expert Apache Kafka services be engaged to configure, test and maintain Apache Zookeeper in business critical Mojaloop deployments._
 
 
@@ -350,6 +352,8 @@ Each Apache Kafka broker supporting inter-service message stream services should
 Cluster members should be deployed to nodes that are expected to fail independently i.e. in separate physical racks, powered by separate diverse power supplies and connected via separate network switching components.
 
 Note that additional members may be added to the cluster to increase redundancy and throughput capacity (in certain circumstances). Any additional members should be deployed to additional different physical nodes in order to maintain resilience against physical hardware failures.
+
+Please see the document [Confluent On-Premises Kafka Recommendations](./Confluent%20On-Premises%20Kafka%20Recommendations%20v0.3.pdf) for more detailed configuration recommendations.
 
 _Note: The Mojaloop Foundation recommends that expert Apache Kafka services be engaged to configure, test and maintain Apache Kafka in business critical Mojaloop deployments._
 
